@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f1923 0%, #1a2332 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff1e1e, #0090ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #aaa;
+    font-size: 1.1em;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Control Panel */
+.control-panel {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.control-group label {
+    font-size: 0.9em;
+    color: #bbb;
+    font-weight: 500;
+}
+
+select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+select:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+select:focus {
+    outline: none;
+    border-color: #0090ff;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff1e1e, #ff6b00);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 30, 30, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #0090ff, #00d4ff);
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 144, 255, 0.4);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Qualification Times */
+.quali-times {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.driver-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.driver-card.verstappen {
+    border-color: #0090ff;
+}
+
+.driver-card.comparison {
+    border-color: #ff6b00;
+}
+
+.driver-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.quali-time {
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+.quali-position {
+    font-size: 1.1em;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.sector-times {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.time-diff {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.time-diff.faster {
+    color: #00ff88;
+}
+
+.time-diff.slower {
+    color: #ff4444;
+}
+
+/* Track Visualization */
+.track-container {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+}
+
+#track-canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #0a0e14;
+    display: block;
+}
+
+.track-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.track-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.track-info p {
+    color: #aaa;
+}
+
+/* Statistics */
+.statistics {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.statistics h3 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* ===================================
+   SIMPLE LOADING SCREEN
+   Clean Name Fill Effect
+   =================================== */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a0e14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+/* ========== DRIVER NAME FILL EFFECT ========== */
+
+.driver-name-container {
+    margin-bottom: 10px;
+}
+
+.driver-name {
+    font-size: 5em;
+    font-weight: 900;
+    letter-spacing: 10px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Base grey text */
+.driver-name {
+    color: #444;
+}
+
+/* Colored overlay that reveals left to right */
+.driver-name::after {
+    content: 'MAX VERSTAPPEN';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff1e1e 0%, #ff1e1e 25%, #0090ff 25%, #0090ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    clip-path: inset(0 100% 0 0);
+    animation: revealText 2.5s ease-out forwards;
+}
+
+@keyframes revealText {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Loading Message */
+.loading-message {
+    font-size: 1em;
+    color: #999;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease-in 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Loading Bar */
+.loading-bar {
+    width: 400px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.loading-progress {
+    height: 100%;
+    background: #0090ff;
+    width: 0%;
+    animation: fillProgress 2s ease-out forwards;
+    box-shadow: 0 0 10px rgba(0, 144, 255, 0.5);
+}
+
+@keyframes fillProgress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Red Bull Branding */
+.redbull-logo {
+    font-size: 0.8em;
+    color: #666;
+    letter-spacing: 2px;
+    animation: fadeIn 0.5s ease-in 1s both;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .control-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-group {
+        min-width: 100%;
+    }
+
+    .quali-times {
+        grid-template-columns: 1fr;
+    }
+}
