@@ -1,14 +1,14 @@
 // API Integration for F1 and GT3 data
 
 const API = {
-    // Ergast F1 API (historical data)
-    ERGAST_BASE: 'https://ergast.com/api/f1',
+    // Jolpica F1 API (Ergast mirror - ergast.com is down)
+    ERGAST_BASE: 'https://api.jolpi.ca/ergast/f1',
 
     // OpenF1 API (live and detailed telemetry)
     OPENF1_BASE: 'https://api.openf1.org/v1',
 
     // Current season
-    CURRENT_SEASON: 2024,
+    CURRENT_SEASON: 2025,
 
     // Max Verstappen driver ID
     VERSTAPPEN_ID: 'max_verstappen',
@@ -32,21 +32,14 @@ const API = {
             const races = data.MRData.RaceTable.Races;
 
             if (!races || races.length === 0) {
-                console.warn(`No races found for ${season}, trying 2024`);
-                if (season !== 2024) {
-                    return this.getRaces(2024);
-                }
+                console.warn(`No races found for ${season}`);
+                return [];
             }
 
             this.cache[cacheKey] = races;
             return races;
         } catch (error) {
-            console.error('Error fetching races:', error);
-            // Fallback to 2024 if current season fails
-            if (season !== 2024) {
-                console.log('Falling back to 2024 season');
-                return this.getRaces(2024);
-            }
+            console.error(`Error fetching races for ${season}:`, error);
             return [];
         }
     },
@@ -206,13 +199,18 @@ const API = {
             'Circuit de Barcelona-Catalunya': 'spain',
             'Circuit de Spa-Francorchamps': 'spa',
             'Autodromo Nazionale di Monza': 'monza',
+            'Autodromo Nazionale Monza': 'monza',
             'Silverstone Circuit': 'silverstone',
-            'Suzuka Circuit': 'suzuka',
-            'Autódromo José Carlos Pace': 'interlagos',
-            'Circuit of the Americas': 'austin',
+            'Suzuka Circuit': 'japan',
+            'Suzuka International Racing Course': 'japan',
+            'Autódromo José Carlos Pace': 'brazil',
+            'Autódromo José Carlos Pace - Interlagos': 'brazil',
+            'Circuit of the Americas': 'cota',
             'Autódromo Hermanos Rodríguez': 'mexico',
-            'Las Vegas Street Circuit': 'vegas',
-            'Yas Marina Circuit': 'abu-dhabi'
+            'Yas Marina Circuit': 'abudhabi',
+            'Circuit Gilles Villeneuve': 'canada',
+            'Circuit Gilles-Villeneuve': 'canada',
+            'Hungaroring': 'hungary'
         };
 
         return mappings[circuitName] || Object.keys(mappings).find(key =>

@@ -48,6 +48,14 @@ class F1Visualizer {
         this.isAnimating = false;
         this.comparisonData = null;
 
+        // Telemetry system initialization
+        this.telemetryMapper = null;
+        this.currentLapTelemetry = null;
+        this.currentTelemetryIndex = 0;
+        this.trackScale = 1;
+        this.trackOffsetX = 0;
+        this.trackOffsetY = 0;
+
         this.init();
     }
 
@@ -65,8 +73,8 @@ class F1Visualizer {
 
     async loadRaces() {
         try {
-            loadingManager.updateMessage('Loading 2024 F1 Season...');
-            const races = await API.getRaces();
+            loadingManager.updateMessage(`Loading ${API.CURRENT_SEASON} F1 Season...`);
+            const races = await API.getRaces(API.CURRENT_SEASON);
 
             const trackSelect = document.getElementById('track-select');
             trackSelect.innerHTML = '<option value="">Select a track...</option>';
@@ -104,13 +112,13 @@ class F1Visualizer {
             this.toggleAnimation();
         });
 
-        document.getElementById('track-select').addEventListener('change', (e) => {
+        document.getElementById('track-select').addEventListener('change', async (e) => {
             const selectedOption = e.target.options[e.target.selectedIndex];
             const circuitName = selectedOption.dataset.circuitName;
             const isGT3 = selectedOption.dataset.gt3 === 'true';
 
             if (circuitName) {
-                this.loadTrackLayout(circuitName, isGT3);
+                await this.loadTrackLayout(circuitName, isGT3);
             }
         });
 
@@ -134,7 +142,7 @@ class F1Visualizer {
         }
     }
 
-    loadTrackLayout(circuitName, isGT3 = false) {
+    async loadTrackLayout(circuitName, isGT3 = false) {
         // Show loading for track switching
         loadingManager.show(`Loading ${circuitName}...`);
 
@@ -154,6 +162,18 @@ class F1Visualizer {
         }
 
         this.selectedTrack = ALL_TRACKS[trackKey];
+
+        // Initialize telemetry system for accurate lap animation
+        if (!this.telemetryMapper) {
+            this.telemetryMapper = new TelemetryMapper(ALL_TRACKS);
+        }
+
+        // Try to load REAL telemetry data first, fall back to simulated
+        loadingManager.updateMessage('Loading telemetry data...');
+        this.currentLapTelemetry = await this.loadTelemetryData(trackKey);
+        this.currentTelemetryIndex = 0;
+
+        console.log(`✓ Loaded ${this.selectedTrack.name} with ${this.currentLapTelemetry.length} telemetry points`);
 
         // Simulate loading time for track rendering
         setTimeout(() => {
@@ -334,6 +354,30 @@ class F1Visualizer {
         this.ctx.fillText('Select a track to view', this.canvas.width / 2, this.canvas.height / 2);
     }
 
+    // Simple track rendering without splines
+    drawTrackPath(coords, strokeStyle, lineWidth, scale, offsetX, offsetY) {
+        if (coords.length < 2) return;
+
+        this.ctx.strokeStyle = strokeStyle;
+        this.ctx.lineWidth = lineWidth;
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round';
+        this.ctx.beginPath();
+
+        coords.forEach((point, index) => {
+            const x = point.x * scale + offsetX;
+            const y = point.y * scale + offsetY;
+            if (index === 0) {
+                this.ctx.moveTo(x, y);
+            } else {
+                this.ctx.lineTo(x, y);
+            }
+        });
+
+        this.ctx.closePath();
+        this.ctx.stroke();
+    }
+
     renderTrack() {
         if (!this.selectedTrack) return;
 
@@ -354,38 +398,16 @@ class F1Visualizer {
         const offsetX = padding - bounds.minX * scale + (this.canvas.width - bounds.width * scale - padding * 2) / 2;
         const offsetY = padding - bounds.minY * scale + (this.canvas.height - bounds.height * scale - padding * 2) / 2;
 
-        // Draw track outline
-        this.ctx.strokeStyle = '#444';
-        this.ctx.lineWidth = 30;
-        this.ctx.lineCap = 'round';
-        this.ctx.lineJoin = 'round';
+        // Store scale and offset for telemetry animation
+        this.trackScale = scale;
+        this.trackOffsetX = offsetX;
+        this.trackOffsetY = offsetY;
 
-        this.ctx.beginPath();
-        coords.forEach((point, index) => {
-            const x = point.x * scale + offsetX;
-            const y = point.y * scale + offsetY;
-            if (index === 0) {
-                this.ctx.moveTo(x, y);
-            } else {
-                this.ctx.lineTo(x, y);
-            }
-        });
-        this.ctx.stroke();
+        // Draw track outline
+        this.drawTrackPath(coords, '#444', 30, scale, offsetX, offsetY);
 
         // Draw track surface
-        this.ctx.strokeStyle = '#2a2a2a';
-        this.ctx.lineWidth = 24;
-        this.ctx.beginPath();
-        coords.forEach((point, index) => {
-            const x = point.x * scale + offsetX;
-            const y = point.y * scale + offsetY;
-            if (index === 0) {
-                this.ctx.moveTo(x, y);
-            } else {
-                this.ctx.lineTo(x, y);
-            }
-        });
-        this.ctx.stroke();
+        this.drawTrackPath(coords, '#2a2a2a', 24, scale, offsetX, offsetY);
 
         // Draw start/finish line
         const startX = coords[0].x * scale + offsetX;
@@ -455,33 +477,92 @@ class F1Visualizer {
 
             this.renderTrack();
 
-            // Calculate car position
-            const progress = this.carPosition / 100;
-            const totalPoints = this.scaledCoords.length;
-            const pointIndex = Math.floor(progress * (totalPoints - 1));
-            const nextIndex = Math.min(pointIndex + 1, totalPoints - 1);
+            // Use telemetry data for accurate car position and speed
+            if (this.currentLapTelemetry && this.currentLapTelemetry.length > 0) {
+                // Get current telemetry point
+                const telemetryIndex = this.currentTelemetryIndex % this.currentLapTelemetry.length;
+                const telemetry = this.currentLapTelemetry[telemetryIndex];
 
-            const point = this.scaledCoords[pointIndex];
-            const nextPoint = this.scaledCoords[nextIndex];
+                // Map telemetry progress to track coordinates
+                const trackCoords = this.selectedTrack.coordinates;
+                const progress = telemetryIndex / this.currentLapTelemetry.length;
+                const trackIndex = Math.floor(progress * trackCoords.length) % trackCoords.length;
+                const trackPoint = trackCoords[trackIndex];
 
-            const localProgress = (progress * (totalPoints - 1)) - pointIndex;
-            const x = point.x + (nextPoint.x - point.x) * localProgress;
-            const y = point.y + (nextPoint.y - point.y) * localProgress;
+                // Car position using track coordinates with canvas transformation
+                const x = trackPoint.x * this.trackScale + this.trackOffsetX;
+                const y = trackPoint.y * this.trackScale + this.trackOffsetY;
 
-            // Draw Max's car (Red Bull)
-            this.drawCar(x, y, '#0090ff');
+                // Use single color for car dot
+                const carColor = '#FFD700';
 
-            // Draw comparison car if exists
-            if (this.comparisonData) {
-                const offset = -5; // Slightly behind
-                const compIndex = Math.max(0, pointIndex + offset);
-                const compPoint = this.scaledCoords[compIndex % totalPoints];
-                this.drawCar(compPoint.x, compPoint.y, '#ff6b00');
-            }
+                // Draw Max's car
+                this.drawCar(x, y, carColor);
 
-            this.carPosition += 0.5;
-            if (this.carPosition >= 100) {
-                this.carPosition = 0;
+                // Draw telemetry info on canvas with background
+                const statsX = 20;
+                const statsY = 20;
+                const statsWidth = 180;
+                const statsHeight = 90;
+
+                // Draw semi-transparent background
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                this.ctx.fillRect(statsX - 10, statsY - 10, statsWidth, statsHeight);
+
+                // Draw text
+                this.ctx.fillStyle = '#FFFFFF';
+                this.ctx.font = 'bold 14px Arial';
+                this.ctx.fillText(`Speed: ${telemetry.speed} km/h`, statsX, statsY + 20);
+                this.ctx.fillText(`Throttle: ${telemetry.throttle}%`, statsX, statsY + 40);
+                this.ctx.fillText(`Brake: ${telemetry.brake}%`, statsX, statsY + 60);
+                this.ctx.fillText(`Gear: ${telemetry.gear}`, statsX, statsY + 80);
+
+                // Draw comparison car if exists
+                if (this.comparisonData) {
+                    const offset = Math.max(1, Math.floor(this.currentLapTelemetry.length * 0.05)); // 5% behind
+                    const compIndex = (telemetryIndex - offset + this.currentLapTelemetry.length) % this.currentLapTelemetry.length;
+                    const compTelemetry = this.currentLapTelemetry[compIndex];
+
+                    // Map comparison car to track coordinates
+                    const compProgress = compIndex / this.currentLapTelemetry.length;
+                    const compTrackIndex = Math.floor(compProgress * trackCoords.length) % trackCoords.length;
+                    const compTrackPoint = trackCoords[compTrackIndex];
+
+                    const compX = compTrackPoint.x * this.trackScale + this.trackOffsetX;
+                    const compY = compTrackPoint.y * this.trackScale + this.trackOffsetY;
+                    this.drawCar(compX, compY, '#ff6b00');
+                }
+
+                this.currentTelemetryIndex += 1;
+            } else {
+                // Fallback to original animation if telemetry not available
+                const progress = this.carPosition / 100;
+                const totalPoints = this.scaledCoords.length;
+                const pointIndex = Math.floor(progress * (totalPoints - 1));
+                const nextIndex = Math.min(pointIndex + 1, totalPoints - 1);
+
+                const point = this.scaledCoords[pointIndex];
+                const nextPoint = this.scaledCoords[nextIndex];
+
+                const localProgress = (progress * (totalPoints - 1)) - pointIndex;
+                const x = point.x + (nextPoint.x - point.x) * localProgress;
+                const y = point.y + (nextPoint.y - point.y) * localProgress;
+
+                // Draw Max's car (Red Bull)
+                this.drawCar(x, y, '#0090ff');
+
+                // Draw comparison car if exists
+                if (this.comparisonData) {
+                    const offset = -5; // Slightly behind
+                    const compIndex = Math.max(0, pointIndex + offset);
+                    const compPoint = this.scaledCoords[compIndex % totalPoints];
+                    this.drawCar(compPoint.x, compPoint.y, '#ff6b00');
+                }
+
+                this.carPosition += 0.5;
+                if (this.carPosition >= 100) {
+                    this.carPosition = 0;
+                }
             }
 
                 this.animationId = requestAnimationFrame(animate);
@@ -496,8 +577,44 @@ class F1Visualizer {
         if (this.animationId) {
             cancelAnimationFrame(this.animationId);
         }
+        this.currentTelemetryIndex = 0;
+        this.carPosition = 0;
         document.getElementById('animate-btn').textContent = 'Animate Lap';
         this.renderTrack();
+    }
+
+    /**
+     * Load telemetry data - tries REAL data first, falls back to simulated
+     */
+    async loadTelemetryData(trackKey) {
+        try {
+            // Try to load REAL telemetry data from file
+            const trackName = this.selectedTrack.name.split(' ').pop() || trackKey;
+            const filename = `real_telemetry_${trackKey.toLowerCase()}.json`;
+
+            console.log(`🔄 Attempting to load REAL telemetry from ${filename}...`);
+
+            const response = await fetch(filename);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.telemetry && data.telemetry.length > 0) {
+                    console.log(`✅ LOADED REAL TELEMETRY: ${data.telemetry.length} points from ${data.metadata.driver}`);
+                    console.log(`   📍 ${data.metadata.gp} - ${data.metadata.year} ${data.metadata.session}`);
+                    console.log(`   🏎️  Team: ${data.metadata.team}`);
+                    const speeds = data.telemetry.map(p => p.speed);
+                    const avgSpeed = Math.round(speeds.reduce((a, b) => a + b) / speeds.length);
+                    const topSpeed = Math.max(...speeds);
+                    console.log(`   ⚡ Speed: ${avgSpeed} km/h avg, ${topSpeed.toFixed(1)} km/h top`);
+                    return data.telemetry;
+                }
+            }
+        } catch (error) {
+            console.log('⚠️  Real telemetry not available, using simulated data');
+        }
+
+        // Fallback to simulated data
+        console.log(`📊 Generating simulated telemetry for ${this.selectedTrack.name}...`);
+        return generateSampleTelemetry(this.selectedTrack.coordinates);
     }
 
     drawCar(x, y, color) {
