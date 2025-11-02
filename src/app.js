@@ -63,6 +63,9 @@ class F1Visualizer {
         // Show initial loading screen
         loadingManager.show('Initializing Application...');
 
+        // Initialize track loader
+        await trackLoader.init();
+
         await this.loadRaces();
         this.setupEventListeners();
         this.renderEmptyTrack();
@@ -154,18 +157,26 @@ class F1Visualizer {
             trackKey = API.getTrackKey(circuitName);
         }
 
-        if (!trackKey || !ALL_TRACKS[trackKey]) {
-            console.error('Track not found:', circuitName);
+        if (!trackKey) {
+            console.error('Track key not found for:', circuitName);
             this.renderEmptyTrack();
             loadingManager.hide(300);
             return;
         }
 
-        this.selectedTrack = ALL_TRACKS[trackKey];
+        // Load track data dynamically
+        try {
+            this.selectedTrack = await trackLoader.loadTrack(trackKey);
+        } catch (error) {
+            console.error('Track not found:', circuitName, error);
+            this.renderEmptyTrack();
+            loadingManager.hide(300);
+            return;
+        }
 
         // Initialize telemetry system for accurate lap animation
         if (!this.telemetryMapper) {
-            this.telemetryMapper = new TelemetryMapper(ALL_TRACKS);
+            this.telemetryMapper = new TelemetryMapper(trackLoader);
         }
 
         // Try to load REAL telemetry data first, fall back to simulated

@@ -1,0 +1,96 @@
+{
+  "tracks": [
+    {
+      "key": "australia",
+      "name": "Albert Park Circuit",
+      "country": "Melbourne",
+      "file": "tracks/australia.json"
+    },
+    {
+      "key": "bahrain",
+      "name": "Bahrain International Circuit",
+      "country": "Sakhir",
+      "file": "tracks/bahrain.json"
+    },
+    {
+      "key": "monaco",
+      "name": "Circuit de Monaco",
+      "country": "Monaco",
+      "file": "tracks/monaco.json"
+    },
+    {
+      "key": "canada",
+      "name": "Circuit Gilles-Villeneuve",
+      "country": "Montreal",
+      "file": "tracks/canada.json"
+    },
+    {
+      "key": "silverstone",
+      "name": "Silverstone Circuit",
+      "country": "Silverstone",
+      "file": "tracks/silverstone.json"
+    },
+    {
+      "key": "hungary",
+      "name": "Hungaroring",
+      "country": "Budapest",
+      "file": "tracks/hungary.json"
+    },
+    {
+      "key": "spa",
+      "name": "Circuit de Spa-Francorchamps",
+      "country": "Spa Francorchamps",
+      "file": "tracks/spa.json"
+    },
+    {
+      "key": "japan",
+      "name": "Suzuka International Racing Course",
+      "country": "Suzuka",
+      "file": "tracks/japan.json"
+    },
+    {
+      "key": "mexico",
+      "name": "Autódromo Hermanos Rodríguez",
+      "country": "Mexico City",
+      "file": "tracks/mexico.json"
+    },
+    {
+      "key": "abudhabi",
+      "name": "Yas Marina Circuit",
+      "country": "Yas Marina",
+      "file": "tracks/abudhabi.json"
+    },
+    {
+      "key": "jeddah",
+      "name": "Jeddah Corniche Circuit",
+      "country": "Jeddah",
+      "file": "tracks/jeddah.json"
+    },
+    {
+      "key": "spain",
+      "name": "Circuit de Barcelona-Catalunya",
+      "country": "Barcelona",
+      "file": "tracks/spain.json"
+    },
+    {
+      "key": "monza",
+      "name": "Autodromo Nazionale Monza",
+      "country": "Monza",
+      "file": "tracks/monza.json"
+    },
+    {
+      "key": "cota",
+      "name": "Circuit of the Americas",
+      "country": "Austin",
+      "file": "tracks/cota.json"
+    },
+    {
+      "key": "brazil",
+      "name": "Autódromo José Carlos Pace - Interlagos",
+      "country": "Sao Paulo",
+      "file": "tracks/brazil.json"
+    }
+  ],
+  "generated": "2025-11-02T19:31:25.402Z",
+  "totalTracks": 15
+}

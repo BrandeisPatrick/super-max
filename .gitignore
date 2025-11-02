@@ -1,17 +1,146 @@
-# OS files
-.DS_Store
-Thumbs.db
+# ===========================
+# Operating System Files
+# ===========================
 
-# Editor directories
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# ===========================
+# Editor & IDE
+# ===========================
+
+# Visual Studio Code
 .vscode/
+*.code-workspace
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
 .idea/
+*.iml
+*.iws
+
+# Vim
 *.swp
 *.swo
+*.swn
+.*.sw[a-p]
+
+# Emacs
 *~
+\#*\#
+.\#*
 
-# Node modules (if you add any build tools later)
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ===========================
+# Node.js & Package Managers
+# ===========================
+
+# Dependencies
 node_modules/
+jspm_packages/
 
-# Logs
-*.log
+# Package manager lock files (optional - uncomment if not tracking)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# npm
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===========================
+# Build & Distribution
+# ===========================
+
+# Build outputs
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ===========================
+# Environment & Secrets
+# ===========================
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+
+# API keys and credentials
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# ===========================
+# Testing & Coverage
+# ===========================
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Jest
+.jest-cache/
+
+# ===========================
+# Temporary & Cache Files
+# ===========================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# ===========================
+# Project Specific
+# ===========================
+
+# Temporary utility scripts
+split-tracks.js
+
+# Optional: Ignore the old monolithic track file if keeping split version
+# data/track-data.js
