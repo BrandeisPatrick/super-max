@@ -10,119 +10,172 @@
     <!-- F1 Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
-            <!-- Driver Name with Fill Effect -->
             <div class="driver-name-container">
-                <h1 class="driver-name">MAX VERSTAPPEN</h1>
+                <h1 class="driver-name">
+                    <span class="name-red">MAX</span>
+                    <span class="name-blue">VERSTAPPEN</span>
+                </h1>
             </div>
-
-            <!-- Loading Message -->
             <p class="loading-message" id="loading-message">Loading Race Data...</p>
-
-            <!-- Progress Bar -->
             <div class="loading-bar">
                 <div class="loading-progress" id="loading-progress"></div>
             </div>
-
-            <!-- Red Bull Branding -->
             <div class="redbull-logo">
                 <span>ORACLE RED BULL RACING</span>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <header>
-            <h1>🏎️ Max Verstappen - Race Data & Qualification Times</h1>
-            <p class="subtitle">2025 F1 Season & GT3 Race Analysis</p>
-        </header>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>MAX<br>VERSTAPPEN</h1>
+        </div>
+        <nav class="main-nav">
+            <button class="menu-btn" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
 
-        <div class="main-content">
-            <!-- Track Selection -->
-            <section class="control-panel">
-                <div class="control-group">
-                    <label for="track-select">Select Track:</label>
-                    <select id="track-select">
-                        <option value="">Loading tracks...</option>
-                    </select>
+    <!-- Decorative Background Curves -->
+    <div class="bg-curves">
+        <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,450 Q 360,200 720,450 T 1440,450" fill="none" stroke="rgba(0,30,60,0.03)" stroke-width="2"/>
+            <path d="M 0,300 Q 480,500 960,300 T 1920,300" fill="none" stroke="rgba(255,30,30,0.03)" stroke-width="2"/>
+            <path d="M 0,600 Q 300,400 600,600 T 1200,600" fill="none" stroke="rgba(0,144,255,0.03)" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <!-- Hero Section with Centered Portrait -->
+    <section class="hero-minimal">
+        <div class="hero-portrait">
+            <!-- Official Red Bull Racing - Max Verstappen 2024 F1 World Champion -->
+            <img src="https://img.redbull.com/images/w_3000/q_auto,f_auto/redbullcom/2024/11/24/nrqoxx9as35r5ry8ashm/max-verstapen-2024-f1-world-champion-four" alt="Max Verstappen - 2024 F1 World Champion" class="portrait-image">
+        </div>
+        <div class="hero-number">1</div>
+    </section>
+
+    <!-- Next Race Widget -->
+    <div class="next-race-widget">
+        <div class="widget-label">NEXT RACE</div>
+        <div class="widget-icon">
+            <svg width="50" height="35" viewBox="0 0 50 35" fill="none">
+                <path d="M5 17.5L15 10V25L5 17.5Z" fill="currentColor"/>
+                <path d="M20 17.5L30 10V25L20 17.5Z" fill="currentColor"/>
+                <path d="M35 17.5L45 10V25L35 17.5Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="widget-race">LAS VEGAS GP</div>
+        <div class="widget-team">
+            <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
+                <circle cx="12" cy="15" r="3" fill="#ff1e1e"/>
+                <circle cx="28" cy="15" r="3" fill="#ff1e1e"/>
+                <path d="M8 15C8 10 12 7 20 7C28 7 32 10 32 15" stroke="#001e3c" stroke-width="2" fill="none"/>
+            </svg>
+            <span>ORACLE RED BULL RACING</span>
+        </div>
+    </div>
+
+    <!-- Data Visualization Section -->
+    <div id="data" class="data-section">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="data-header">
+                <h1>RACE DATA DASHBOARD</h1>
+                <p>Real-time telemetry and performance analytics</p>
+            </div>
+
+            <!-- Unified Dashboard -->
+            <div class="dashboard">
+                <!-- Control Panel -->
+                <div class="dashboard-controls">
+                    <div class="control-group">
+                        <label for="track-select">Track</label>
+                        <select id="track-select">
+                            <option value="">Loading tracks...</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="race-type">Type</label>
+                        <select id="race-type">
+                            <option value="f1">Formula 1</option>
+                            <option value="gt3">GT3</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="compare-driver">Compare</label>
+                        <select id="compare-driver">
+                            <option value="">Select driver...</option>
+                        </select>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button id="load-data-btn" class="btn-primary">Load Data</button>
+                        <button id="animate-btn" class="btn-secondary" disabled>Animate</button>
+                    </div>
                 </div>
 
-                <div class="control-group">
-                    <label for="race-type">Race Type:</label>
-                    <select id="race-type">
-                        <option value="f1">Formula 1</option>
-                        <option value="gt3">GT3</option>
-                    </select>
+                <!-- Qualification Times -->
+                <div class="dashboard-quali">
+                    <div class="quali-card verstappen">
+                        <span class="driver-label">Max Verstappen</span>
+                        <div class="quali-time" id="max-quali-time">--:--.---</div>
+                        <div class="quali-position" id="max-quali-pos">Position: -</div>
+                        <div class="sector-times" id="max-sectors"></div>
+                    </div>
+
+                    <div class="quali-card comparison" id="compare-card" style="display: none;">
+                        <span class="driver-label" id="compare-driver-name">-</span>
+                        <div class="quali-time" id="compare-quali-time">--:--.---</div>
+                        <div class="quali-position" id="compare-quali-pos">Position: -</div>
+                        <div class="sector-times" id="compare-sectors"></div>
+                        <div class="time-diff" id="time-diff"></div>
+                    </div>
                 </div>
 
-                <div class="control-group">
-                    <label for="compare-driver">Compare With:</label>
-                    <select id="compare-driver">
-                        <option value="">Select a driver...</option>
-                    </select>
+                <!-- Track Visualization -->
+                <div class="dashboard-track">
+                    <div class="track-header">
+                        <h3 id="track-name">Select a track</h3>
+                        <p id="track-details">-</p>
+                    </div>
+                    <canvas id="track-canvas" width="800" height="500"></canvas>
                 </div>
 
-                <button id="load-data-btn" class="btn-primary">Load Data</button>
-                <button id="animate-btn" class="btn-secondary" disabled>Animate Lap</button>
-            </section>
-
-            <!-- Qualification Times Display -->
-            <section class="quali-times">
-                <div class="driver-card verstappen">
-                    <h3>Max Verstappen</h3>
-                    <div class="quali-time" id="max-quali-time">--:--.---</div>
-                    <div class="quali-position" id="max-quali-pos">Position: -</div>
-                    <div class="sector-times" id="max-sectors"></div>
-                </div>
-
-                <div class="driver-card comparison" id="compare-card" style="display: none;">
-                    <h3 id="compare-driver-name">-</h3>
-                    <div class="quali-time" id="compare-quali-time">--:--.---</div>
-                    <div class="quali-position" id="compare-quali-pos">Position: -</div>
-                    <div class="sector-times" id="compare-sectors"></div>
-                    <div class="time-diff" id="time-diff"></div>
-                </div>
-            </section>
-
-            <!-- Track Visualization -->
-            <section class="track-container">
-                <canvas id="track-canvas" width="1200" height="700"></canvas>
-                <div class="track-info">
-                    <h3 id="track-name">Select a track</h3>
-                    <p id="track-details">-</p>
-                </div>
-            </section>
-
-            <!-- Race Statistics -->
-            <section class="statistics">
-                <h3>Session Statistics</h3>
-                <div class="stats-grid" id="stats-grid">
-                    <div class="stat-item">
+                <!-- Session Statistics -->
+                <div class="dashboard-stats">
+                    <div class="stat-card">
                         <span class="stat-label">Top Speed</span>
                         <span class="stat-value" id="top-speed">- km/h</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-card">
                         <span class="stat-label">Avg Speed</span>
                         <span class="stat-value" id="avg-speed">- km/h</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Fastest Sector 1</span>
+                    <div class="stat-card">
+                        <span class="stat-label">Sector 1</span>
                         <span class="stat-value" id="sector-1">-</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Fastest Sector 2</span>
+                    <div class="stat-card">
+                        <span class="stat-label">Sector 2</span>
                         <span class="stat-value" id="sector-2">-</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Fastest Sector 3</span>
+                    <div class="stat-card">
+                        <span class="stat-label">Sector 3</span>
                         <span class="stat-value" id="sector-3">-</span>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <footer>
-            <p>Data sources: Jolpica F1 API & OpenF1 | Track data: Approximate circuit layouts</p>
-        </footer>
+            <footer>
+                <p>Data sources: Jolpica F1 API & OpenF1 | Track data: Approximate circuit layouts</p>
+            </footer>
+        </div>
     </div>
 
     <script src="data/track-loader.js"></script>

@@ -70,8 +70,8 @@ class F1Visualizer {
         this.setupEventListeners();
         this.renderEmptyTrack();
 
-        // Hide loading screen after everything is loaded
-        loadingManager.hide(800);
+        // Hide loading screen after animation completes (3s animation + 1.5s buffer)
+        loadingManager.hide(4500);
     }
 
     async loadRaces() {
@@ -210,7 +210,7 @@ class F1Visualizer {
 
         if (isGT3) {
             this.loadGT3Data();
-            loadingManager.hide(500);
+            loadingManager.hide(4500);
         } else {
             await this.loadF1Data(selectedOption.dataset.round);
         }
@@ -289,8 +289,8 @@ class F1Visualizer {
                 }
             }
 
-            // Hide loading screen after data is loaded
-            loadingManager.hide(500);
+            // Hide loading screen after animation completes (3s animation + 1.5s buffer)
+            loadingManager.hide(4500);
 
         } catch (error) {
             console.error('Error loading F1 data:', error);
