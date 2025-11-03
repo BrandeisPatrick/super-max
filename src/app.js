@@ -307,6 +307,288 @@ class F1Visualizer {
         this.comparisonData = driverQuali;
     }
 
+    // ===== F1 PROFESSIONAL TRACK VISUALIZATION =====
+
+    /**
+     * Analyze track curvature to determine speed zones
+     * Returns array of segments with speed classifications
+     */
+    analyzeTrackCurvature(coords) {
+        if (coords.length < 3) return [];
+
+        const segments = [];
+        const smoothingWindow = 5; // Points to consider for smoothing
+
+        for (let i = 0; i < coords.length; i++) {
+            const prevIdx = (i - smoothingWindow + coords.length) % coords.length;
+            const nextIdx = (i + smoothingWindow) % coords.length;
+
+            const prev = coords[prevIdx];
+            const current = coords[i];
+            const next = coords[nextIdx];
+
+            // Calculate vectors
+            const v1 = { x: current.x - prev.x, y: current.y - prev.y };
+            const v2 = { x: next.x - current.x, y: next.y - current.y };
+
+            // Calculate angle between vectors (in degrees)
+            const dot = v1.x * v2.x + v1.y * v2.y;
+            const mag1 = Math.sqrt(v1.x * v1.x + v1.y * v1.y);
+            const mag2 = Math.sqrt(v2.x * v2.x + v2.y * v2.y);
+
+            const cosAngle = dot / (mag1 * mag2);
+            const angle = Math.acos(Math.max(-1, Math.min(1, cosAngle))) * (180 / Math.PI);
+
+            // Classify speed zone based on curvature
+            let speedZone;
+            if (angle < 5) {
+                speedZone = 'high'; // Straight or very gentle curve
+            } else if (angle < 15) {
+                speedZone = 'medium'; // Fast corner
+            } else {
+                speedZone = 'low'; // Tight corner
+            }
+
+            segments.push({
+                point: current,
+                angle: angle,
+                speedZone: speedZone
+            });
+        }
+
+        return segments;
+    }
+
+    /**
+     * Detect corners in the track
+     * Returns array of corner positions with numbers
+     */
+    detectCorners(coords, threshold = 12) {
+        if (coords.length < 3) return [];
+
+        const corners = [];
+        const smoothingWindow = 8;
+        let cornerNumber = 1;
+        let inCorner = false;
+        let cornerPoints = [];
+
+        for (let i = 0; i < coords.length; i++) {
+            const prevIdx = (i - smoothingWindow + coords.length) % coords.length;
+            const nextIdx = (i + smoothingWindow) % coords.length;
+
+            const prev = coords[prevIdx];
+            const current = coords[i];
+            const next = coords[nextIdx];
+
+            // Calculate angle
+            const v1 = { x: current.x - prev.x, y: current.y - prev.y };
+            const v2 = { x: next.x - current.x, y: next.y - current.y };
+
+            const dot = v1.x * v2.x + v1.y * v2.y;
+            const mag1 = Math.sqrt(v1.x * v1.x + v1.y * v1.y);
+            const mag2 = Math.sqrt(v2.x * v2.x + v2.y * v2.y);
+
+            const cosAngle = dot / (mag1 * mag2);
+            const angle = Math.acos(Math.max(-1, Math.min(1, cosAngle))) * (180 / Math.PI);
+
+            // Detect corner entry/exit
+            if (angle > threshold && !inCorner) {
+                inCorner = true;
+                cornerPoints = [current];
+            } else if (angle > threshold && inCorner) {
+                cornerPoints.push(current);
+            } else if (angle <= threshold && inCorner) {
+                // Corner ended - find apex (middle point)
+                if (cornerPoints.length > 0) {
+                    const apexIdx = Math.floor(cornerPoints.length / 2);
+                    corners.push({
+                        number: cornerNumber++,
+                        position: cornerPoints[apexIdx],
+                        points: cornerPoints.length
+                    });
+                }
+                inCorner = false;
+                cornerPoints = [];
+            }
+        }
+
+        return corners;
+    }
+
+    /**
+     * Get color for speed zone (F1 TV style)
+     */
+    getSpeedZoneColor(speedZone) {
+        const colors = {
+            'high': '#FFD700',      // Gold/Yellow - High speed
+            'medium': '#FF8C00',    // Dark orange - Medium speed
+            'low': '#FF3333'        // Bright red - Low speed
+        };
+        return colors[speedZone] || '#888';
+    }
+
+    /**
+     * Draw track with color-coded speed zones
+     */
+    drawSegmentedTrack(coords, segments, scale, offsetX, offsetY) {
+        if (coords.length < 2 || segments.length !== coords.length) return;
+
+        const ctx = this.ctx;
+
+        // Group consecutive segments of same speed zone
+        const zones = [];
+        let currentZone = {
+            speedZone: segments[0].speedZone,
+            points: [coords[0]]
+        };
+
+        for (let i = 1; i < segments.length; i++) {
+            if (segments[i].speedZone === currentZone.speedZone) {
+                currentZone.points.push(coords[i]);
+            } else {
+                zones.push(currentZone);
+                currentZone = {
+                    speedZone: segments[i].speedZone,
+                    points: [coords[i]]
+                };
+            }
+        }
+        zones.push(currentZone);
+
+        // Draw each zone with its color
+        zones.forEach(zone => {
+            const color = this.getSpeedZoneColor(zone.speedZone);
+
+            // Draw outer glow
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 32;
+            ctx.globalAlpha = 0.3;
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = color;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            zone.points.forEach((point, index) => {
+                const x = point.x * scale + offsetX;
+                const y = point.y * scale + offsetY;
+                if (index === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            ctx.stroke();
+
+            // Draw main track
+            ctx.globalAlpha = 1.0;
+            ctx.shadowBlur = 0;
+            ctx.lineWidth = 24;
+
+            ctx.beginPath();
+            zone.points.forEach((point, index) => {
+                const x = point.x * scale + offsetX;
+                const y = point.y * scale + offsetY;
+                if (index === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            ctx.stroke();
+        });
+
+        // Reset shadow
+        ctx.shadowBlur = 0;
+    }
+
+    /**
+     * Draw corner numbers (F1 style)
+     */
+    drawCornerNumbers(corners, scale, offsetX, offsetY) {
+        const ctx = this.ctx;
+
+        corners.forEach(corner => {
+            const x = corner.position.x * scale + offsetX;
+            const y = corner.position.y * scale + offsetY;
+
+            // Draw dark circle background
+            ctx.fillStyle = 'rgba(20, 20, 20, 0.85)';
+            ctx.beginPath();
+            ctx.arc(x, y, 16, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw white circle outline
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Draw corner number
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(corner.number.toString(), x, y);
+        });
+    }
+
+    /**
+     * Draw speed zone labels
+     */
+    drawSpeedZoneLabels(segments, coords, scale, offsetX, offsetY) {
+        if (segments.length === 0) return;
+
+        const ctx = this.ctx;
+        const labels = [];
+
+        // Find longest sections of each speed zone
+        let currentZone = {
+            type: segments[0].speedZone,
+            start: 0,
+            length: 0
+        };
+
+        for (let i = 1; i < segments.length; i++) {
+            if (segments[i].speedZone === currentZone.type) {
+                currentZone.length++;
+            } else {
+                if (currentZone.length > 20) { // Only label significant zones
+                    labels.push({
+                        type: currentZone.type,
+                        centerIdx: currentZone.start + Math.floor(currentZone.length / 2)
+                    });
+                }
+                currentZone = {
+                    type: segments[i].speedZone,
+                    start: i,
+                    length: 0
+                };
+            }
+        }
+
+        // Draw labels
+        labels.forEach(label => {
+            const point = coords[label.centerIdx];
+            const x = point.x * scale + offsetX;
+            const y = point.y * scale + offsetY - 40; // Position above track
+
+            const text = label.type === 'high' ? 'HIGH SPEED' :
+                        label.type === 'medium' ? 'MEDIUM SPEED' :
+                        'LOW SPEED';
+
+            // Draw semi-transparent background
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            const textWidth = ctx.measureText(text).width;
+            ctx.fillRect(x - textWidth / 2 - 6, y - 10, textWidth + 12, 20);
+
+            // Draw label text
+            ctx.fillStyle = this.getSpeedZoneColor(label.type);
+            ctx.font = 'bold 11px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, x, y);
+        });
+    }
 
     renderEmptyTrack() {
         this.ctx.fillStyle = '#0a0e14';
@@ -367,11 +649,31 @@ class F1Visualizer {
         this.trackOffsetX = offsetX;
         this.trackOffsetY = offsetY;
 
-        // Draw track outline
-        this.drawTrackPath(coords, '#444', 30, scale, offsetX, offsetY);
+        // === PROFESSIONAL F1 VISUALIZATION (CACHED) ===
 
-        // Draw track surface
-        this.drawTrackPath(coords, '#2a2a2a', 24, scale, offsetX, offsetY);
+        // PERFORMANCE OPTIMIZATION: Only calculate once per track, then cache
+        if (!this.trackCache || this.trackCache.trackName !== this.selectedTrack.name) {
+            console.log('🔄 Computing track analysis (one-time)...');
+            this.trackCache = {
+                trackName: this.selectedTrack.name,
+                segments: this.analyzeTrackCurvature(coords),
+                corners: this.detectCorners(coords)
+            };
+            console.log(`✅ Cached ${this.trackCache.segments.length} segments, ${this.trackCache.corners.length} corners`);
+        }
+
+        // Use cached data for rendering
+        const segments = this.trackCache.segments;
+        const corners = this.trackCache.corners;
+
+        // Draw track with color-coded speed zones
+        this.drawSegmentedTrack(coords, segments, scale, offsetX, offsetY);
+
+        // Draw corner numbers
+        this.drawCornerNumbers(corners, scale, offsetX, offsetY);
+
+        // Draw speed zone labels
+        this.drawSpeedZoneLabels(segments, coords, scale, offsetX, offsetY);
 
         // Draw start/finish line
         const startX = coords[0].x * scale + offsetX;
@@ -497,7 +799,8 @@ class F1Visualizer {
                     this.drawCar(compX, compY, '#ff6b00');
                 }
 
-                this.currentTelemetryIndex += 1;
+                // Speed up animation - increment by 3 for 3x faster
+                this.currentTelemetryIndex += 3;
             } else {
                 // Fallback to original animation if telemetry not available
                 const progress = this.carPosition / 100;
@@ -523,7 +826,8 @@ class F1Visualizer {
                     this.drawCar(compPoint.x, compPoint.y, '#ff6b00');
                 }
 
-                this.carPosition += 0.5;
+                // Speed up fallback animation
+                this.carPosition += 1.5;
                 if (this.carPosition >= 100) {
                     this.carPosition = 0;
                 }
@@ -582,16 +886,45 @@ class F1Visualizer {
     }
 
     drawCar(x, y, color) {
-        // Draw car as a circle with team color
+        // Draw outer glow
+        this.ctx.shadowColor = color;
+        this.ctx.shadowBlur = 25;
+        this.ctx.fillStyle = color;
+        this.ctx.globalAlpha = 0.4;
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, 20, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        // Draw middle glow
+        this.ctx.shadowBlur = 15;
+        this.ctx.globalAlpha = 0.7;
+        this.ctx.beginPath();
+        this.ctx.arc(x, y, 14, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        // Draw main car body
+        this.ctx.shadowBlur = 8;
+        this.ctx.globalAlpha = 1.0;
         this.ctx.fillStyle = color;
         this.ctx.beginPath();
-        this.ctx.arc(x, y, 8, 0, Math.PI * 2);
+        this.ctx.arc(x, y, 10, 0, Math.PI * 2);
         this.ctx.fill();
 
         // Draw white outline
+        this.ctx.shadowBlur = 0;
         this.ctx.strokeStyle = '#fff';
-        this.ctx.lineWidth = 2;
+        this.ctx.lineWidth = 2.5;
         this.ctx.stroke();
+
+        // Draw inner highlight
+        this.ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        this.ctx.beginPath();
+        this.ctx.arc(x - 2, y - 2, 3, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        // Reset shadow
+        this.ctx.shadowBlur = 0;
+        this.ctx.globalAlpha = 1.0;
     }
 }
 

@@ -464,14 +464,14 @@ html {
     grid-auto-rows: auto;
 }
 
-/* Tablet and Desktop Layout - Toolbar + 2 Column Grid */
+/* Tablet and Desktop Layout - Full Width Track */
 @media (min-width: 768px) {
     .dashboard {
-        grid-template-columns: minmax(300px, 1fr) minmax(400px, 1.8fr);
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "controls controls"
-            "quali track"
-            "stats stats";
+            "controls"
+            "track"
+            "stats";
         gap: var(--space-5);
     }
 
@@ -480,7 +480,7 @@ html {
     }
 
     .dashboard-quali {
-        grid-area: quali;
+        display: none; /* Hide qualification card */
     }
 
     .dashboard-track {
@@ -495,14 +495,12 @@ html {
 /* Large Desktop - Optimize for wider screens */
 @media (min-width: 1200px) {
     .dashboard {
-        grid-template-columns: minmax(340px, 1fr) minmax(500px, 2.2fr);
         gap: var(--space-6);
     }
 }
 
 @media (min-width: 1440px) {
     .dashboard {
-        grid-template-columns: minmax(380px, 1fr) minmax(600px, 2.5fr);
         gap: var(--space-8);
     }
 }
