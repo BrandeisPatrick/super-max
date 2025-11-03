@@ -958,7 +958,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open menu
     function openMenu() {
-        menuBtn.classList.add('active');
         menuOverlay.classList.add('active');
         menuBackdrop.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -966,7 +965,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close menu
     function closeMenu() {
-        menuBtn.classList.remove('active');
         menuOverlay.classList.remove('active');
         menuBackdrop.classList.remove('active');
         document.body.style.overflow = '';
