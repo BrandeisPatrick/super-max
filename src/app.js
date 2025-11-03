@@ -948,4 +948,54 @@ class F1Visualizer {
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new F1Visualizer();
+
+    // ===== NAVIGATION MENU FUNCTIONALITY =====
+    const menuBtn = document.getElementById('menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuClose = document.getElementById('menu-close');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    // Open menu
+    function openMenu() {
+        menuOverlay.classList.add('active');
+        menuBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close menu
+    function closeMenu() {
+        menuOverlay.classList.remove('active');
+        menuBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    menuBtn.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
+
+    // Close menu and scroll to section when menu item is clicked
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.getAttribute('href');
+            closeMenu();
+
+            // Wait for menu close animation, then scroll
+            setTimeout(() => {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 400);
+        });
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+            closeMenu();
+        }
+    });
 });

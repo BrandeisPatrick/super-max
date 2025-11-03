@@ -285,6 +285,126 @@ html {
     background: var(--white);
 }
 
+/* ===== NAVIGATION MENU OVERLAY ===== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 30, 60, 0.98) 0%, rgba(10, 14, 20, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.menu-overlay.active {
+    right: 0;
+}
+
+.menu-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+}
+
+.menu-close {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.menu-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: 100px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: rgba(255, 30, 30, 0.2);
+    border-color: var(--redbull-red);
+    transform: translateX(-10px);
+}
+
+.menu-icon {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover .menu-icon {
+    background: var(--redbull-red);
+    transform: scale(1.1);
+}
+
+.menu-text {
+    flex: 1;
+}
+
+/* Menu backdrop */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 /* ===== DECORATIVE BACKGROUND CURVES ===== */
 .bg-curves {
     position: fixed;
