@@ -1,0 +1,255 @@
+{
+  "id": "zhou",
+  "name": "Guanyu Zhou",
+  "code": "ZHO",
+  "number": "24",
+  "nationality": "Chinese",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 17,
+      "q1": "1:30.757",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 2,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 20,
+      "q1": null,
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 3,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 19,
+      "q1": "1:18.188",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 4,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 20,
+      "q1": "1:30.143",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 5,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 16,
+      "q1": "1:35.505",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 20,
+      "q1": "1:28.824",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 17,
+      "q1": "1:16.834",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 18,
+      "q1": "1:13.028",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 9,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 20,
+      "q1": "1:14.292",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 10,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 15,
+      "q1": "1:12.880",
+      "q2": "1:12.738",
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 20,
+      "q1": "1:06.061",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 14,
+      "q1": "1:31.190",
+      "q2": "1:27.867",
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 13,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 18,
+      "q1": "1:18.037",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 14,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 20,
+      "q1": "1:57.775",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 18,
+      "q1": "1:13.261",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 20,
+      "q1": "1:21.445",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 18,
+      "q1": "1:44.246",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 20,
+      "q1": "1:32.054",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 20,
+      "q1": "1:34.228",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 20,
+      "q1": "1:18.072",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 21,
+      "raceName": "São Paulo Grand Prix",
+      "circuit": "Autódromo José Carlos Pace",
+      "position": 20,
+      "q1": "1:32.263",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 22,
+      "raceName": "Las Vegas Grand Prix",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "position": 13,
+      "q1": "1:34.079",
+      "q2": "1:33.566",
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 23,
+      "raceName": "Qatar Grand Prix",
+      "circuit": "Losail International Circuit",
+      "position": 12,
+      "q1": "1:22.103",
+      "q2": "1:21.501",
+      "q3": null,
+      "constructor": "Sauber"
+    },
+    {
+      "round": 24,
+      "raceName": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "position": 17,
+      "q1": "1:23.880",
+      "q2": null,
+      "q3": null,
+      "constructor": "Sauber"
+    }
+  ],
+  "stats": {
+    "totalRaces": 24,
+    "polePositions": 0,
+    "avgQualifyingPosition": "18.00",
+    "bestQualifyingPosition": 12
+  }
+}

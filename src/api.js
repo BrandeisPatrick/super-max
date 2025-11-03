@@ -7,7 +7,7 @@ const API = {
     // OpenF1 API (live and detailed telemetry)
     OPENF1_BASE: 'https://api.openf1.org/v1',
 
-    // Current season
+    // Current season (2025 - in progress, 20/24 races completed)
     CURRENT_SEASON: 2025,
 
     // Max Verstappen driver ID
@@ -192,9 +192,11 @@ const API = {
      */
     getTrackKey(circuitName) {
         const mappings = {
+            // Original 15 tracks
             'Bahrain International Circuit': 'bahrain',
             'Jeddah Corniche Circuit': 'jeddah',
             'Albert Park Grand Prix Circuit': 'australia',
+            'Albert Park Circuit': 'australia',
             'Circuit de Monaco': 'monaco',
             'Circuit de Barcelona-Catalunya': 'spain',
             'Circuit de Spa-Francorchamps': 'spa',
@@ -210,7 +212,19 @@ const API = {
             'Yas Marina Circuit': 'abudhabi',
             'Circuit Gilles Villeneuve': 'canada',
             'Circuit Gilles-Villeneuve': 'canada',
-            'Hungaroring': 'hungary'
+            'Hungaroring': 'hungary',
+
+            // New tracks added
+            'Circuit Zandvoort': 'zandvoort',
+            'Red Bull Ring': 'austria',
+            'Las Vegas Street Circuit': 'lasvegas',
+            'Miami International Autodrome': 'miami',
+            'Marina Bay Street Circuit': 'singapore',
+            'Shanghai International Circuit': 'china',
+            'Autodromo Enzo e Dino Ferrari': 'imola',
+            'Autodromo Internazionale Enzo e Dino Ferrari': 'imola',
+            'Losail International Circuit': 'qatar',
+            'Baku City Circuit': 'azerbaijan'
         };
 
         return mappings[circuitName] || Object.keys(mappings).find(key =>

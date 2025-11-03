@@ -1,0 +1,217 @@
+{
+  "season": 2025,
+  "totalDrivers": 21,
+  "generated": "2025-11-03T00:19:41.179Z",
+  "drivers": [
+    {
+      "id": "piastri",
+      "name": "Oscar Piastri",
+      "code": "PIA",
+      "number": "81",
+      "nationality": "Australian",
+      "totalRaces": 20,
+      "polePositions": 5,
+      "avgQualifyingPosition": 3
+    },
+    {
+      "id": "max_verstappen",
+      "name": "Max Verstappen",
+      "code": "VER",
+      "number": "1",
+      "nationality": "Dutch",
+      "totalRaces": 20,
+      "polePositions": 7,
+      "avgQualifyingPosition": 3.1
+    },
+    {
+      "id": "norris",
+      "name": "Lando Norris",
+      "code": "NOR",
+      "number": "4",
+      "nationality": "British",
+      "totalRaces": 20,
+      "polePositions": 5,
+      "avgQualifyingPosition": 3.25
+    },
+    {
+      "id": "russell",
+      "name": "George Russell",
+      "code": "RUS",
+      "number": "63",
+      "nationality": "British",
+      "totalRaces": 20,
+      "polePositions": 2,
+      "avgQualifyingPosition": 4.35
+    },
+    {
+      "id": "leclerc",
+      "name": "Charles Leclerc",
+      "code": "LEC",
+      "number": "16",
+      "nationality": "Monegasque",
+      "totalRaces": 20,
+      "polePositions": 1,
+      "avgQualifyingPosition": 5.2
+    },
+    {
+      "id": "hamilton",
+      "name": "Lewis Hamilton",
+      "code": "HAM",
+      "number": "44",
+      "nationality": "British",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 7.5
+    },
+    {
+      "id": "antonelli",
+      "name": "Andrea Kimi Antonelli",
+      "code": "ANT",
+      "number": "12",
+      "nationality": "Italian",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 8.4
+    },
+    {
+      "id": "hadjar",
+      "name": "Isack Hadjar",
+      "code": "HAD",
+      "number": "6",
+      "nationality": "French",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 10.2
+    },
+    {
+      "id": "alonso",
+      "name": "Fernando Alonso",
+      "code": "ALO",
+      "number": "14",
+      "nationality": "Spanish",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 10.85
+    },
+    {
+      "id": "sainz",
+      "name": "Carlos Sainz",
+      "code": "SAI",
+      "number": "55",
+      "nationality": "Spanish",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 11.35
+    },
+    {
+      "id": "tsunoda",
+      "name": "Yuki Tsunoda",
+      "code": "TSU",
+      "number": "22",
+      "nationality": "Japanese",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 11.9
+    },
+    {
+      "id": "albon",
+      "name": "Alexander Albon",
+      "code": "ALB",
+      "number": "23",
+      "nationality": "Thai",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 12.5
+    },
+    {
+      "id": "lawson",
+      "name": "Liam Lawson",
+      "code": "LAW",
+      "number": "30",
+      "nationality": "New Zealander",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 13.15
+    },
+    {
+      "id": "gasly",
+      "name": "Pierre Gasly",
+      "code": "GAS",
+      "number": "10",
+      "nationality": "French",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 13.75
+    },
+    {
+      "id": "bortoleto",
+      "name": "Gabriel Bortoleto",
+      "code": "BOR",
+      "number": "5",
+      "nationality": "Brazilian",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 14.1
+    },
+    {
+      "id": "bearman",
+      "name": "Oliver Bearman",
+      "code": "BEA",
+      "number": "87",
+      "nationality": "British",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 14.25
+    },
+    {
+      "id": "hulkenberg",
+      "name": "Nico Hülkenberg",
+      "code": "HUL",
+      "number": "27",
+      "nationality": "German",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 15.35
+    },
+    {
+      "id": "ocon",
+      "name": "Esteban Ocon",
+      "code": "OCO",
+      "number": "31",
+      "nationality": "French",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 15.4
+    },
+    {
+      "id": "doohan",
+      "name": "Jack Doohan",
+      "code": "DOO",
+      "number": "7",
+      "nationality": "Australian",
+      "totalRaces": 6,
+      "polePositions": 0,
+      "avgQualifyingPosition": 15.5
+    },
+    {
+      "id": "stroll",
+      "name": "Lance Stroll",
+      "code": "STR",
+      "number": "18",
+      "nationality": "Canadian",
+      "totalRaces": 20,
+      "polePositions": 0,
+      "avgQualifyingPosition": 16.15
+    },
+    {
+      "id": "colapinto",
+      "name": "Franco Colapinto",
+      "code": "COL",
+      "number": "43",
+      "nationality": "Argentine",
+      "totalRaces": 14,
+      "polePositions": 0,
+      "avgQualifyingPosition": 16.57
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": "norris",
+  "name": "Lando Norris",
+  "code": "NOR",
+  "number": "4",
+  "nationality": "British",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 1,
+      "q1": "1:15.912",
+      "q2": "1:15.415",
+      "q3": "1:15.096",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 3,
+      "q1": "1:30.983",
+      "q2": "1:30.787",
+      "q3": "1:30.793",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 2,
+      "q1": "1:27.845",
+      "q2": "1:27.146",
+      "q3": "1:26.995",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 6,
+      "q1": "1:31.107",
+      "q2": "1:30.560",
+      "q3": "1:30.267",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 10,
+      "q1": "1:27.805",
+      "q2": "1:27.481",
+      "q3": null,
+      "constructor": "McLaren"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 2,
+      "q1": "1:26.955",
+      "q2": "1:26.499",
+      "q3": "1:26.269",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 4,
+      "q1": "1:15.894",
+      "q2": "1:15.261",
+      "q3": "1:14.962",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 1,
+      "q1": "1:11.285",
+      "q2": "1:10.570",
+      "q3": "1:09.954",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 9,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 2,
+      "q1": "1:12.799",
+      "q2": "1:12.056",
+      "q3": "1:11.755",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 7,
+      "q1": "1:11.826",
+      "q2": "1:11.599",
+      "q3": "1:11.625",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 1,
+      "q1": "1:04.672",
+      "q2": "1:04.410",
+      "q3": "1:03.971",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 3,
+      "q1": "1:26.123",
+      "q2": "1:25.231",
+      "q3": "1:25.010",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 1,
+      "q1": "1:41.010",
+      "q2": "1:40.715",
+      "q3": "1:40.562",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 3,
+      "q1": "1:15.523",
+      "q2": "1:14.890",
+      "q3": "1:15.413",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 2,
+      "q1": "1:09.469",
+      "q2": "1:08.874",
+      "q3": "1:08.674",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 2,
+      "q1": "1:19.517",
+      "q2": "1:19.293",
+      "q3": "1:18.869",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 7,
+      "q1": "1:41.322",
+      "q2": "1:41.396",
+      "q3": "1:42.239",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 5,
+      "q1": "1:29.932",
+      "q2": "1:29.809",
+      "q3": "1:29.586",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 2,
+      "q1": "1:33.843",
+      "q2": "1:32.876",
+      "q3": "1:32.801",
+      "constructor": "McLaren"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 1,
+      "q1": "1:16.899",
+      "q2": "1:16.252",
+      "q3": "1:15.586",
+      "constructor": "McLaren"
+    }
+  ],
+  "stats": {
+    "totalRaces": 20,
+    "polePositions": 5,
+    "avgQualifyingPosition": "3.25",
+    "bestQualifyingPosition": 1
+  }
+}

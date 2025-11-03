@@ -1,0 +1,75 @@
+{
+  "id": "lawson",
+  "name": "Liam Lawson",
+  "code": "LAW",
+  "number": "30",
+  "nationality": "New Zealander",
+  "races": [
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 15,
+      "q1": "1:33.339",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 12,
+      "q1": "1:17.380",
+      "q2": "1:17.162",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 21,
+      "raceName": "São Paulo Grand Prix",
+      "circuit": "Autódromo José Carlos Pace",
+      "position": 5,
+      "q1": "1:30.758",
+      "q2": "1:25.654",
+      "q3": "1:24.484",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 22,
+      "raceName": "Las Vegas Grand Prix",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "position": 15,
+      "q1": "1:34.087",
+      "q2": "1:34.257",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 23,
+      "raceName": "Qatar Grand Prix",
+      "circuit": "Losail International Circuit",
+      "position": 17,
+      "q1": "1:22.411",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 24,
+      "raceName": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "position": 12,
+      "q1": "1:23.733",
+      "q2": "1:23.472",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 6,
+    "polePositions": 0,
+    "avgQualifyingPosition": "12.67",
+    "bestQualifyingPosition": 5
+  }
+}

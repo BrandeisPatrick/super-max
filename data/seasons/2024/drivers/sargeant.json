@@ -1,0 +1,155 @@
+{
+  "id": "sargeant",
+  "name": "Logan Sargeant",
+  "code": "SAR",
+  "number": "2",
+  "nationality": "American",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 18,
+      "q1": "1:30.770",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 2,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 19,
+      "q1": "1:29.526",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 4,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 19,
+      "q1": "1:30.139",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 5,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 20,
+      "q1": "1:36.358",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 17,
+      "q1": "1:28.487",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 20,
+      "q1": null,
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 15,
+      "q1": "1:12.020",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 9,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 13,
+      "q1": "1:13.063",
+      "q2": "1:12.736",
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 10,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 20,
+      "q1": "1:13.509",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 19,
+      "q1": "1:05.856",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 12,
+      "q1": "1:31.608",
+      "q2": "1:27.175",
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 13,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 14,
+      "q1": "1:17.770",
+      "q2": "1:16.543",
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 14,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 19,
+      "q1": "1:57.230",
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 20,
+      "q1": null,
+      "q2": null,
+      "q3": null,
+      "constructor": "Williams"
+    }
+  ],
+  "stats": {
+    "totalRaces": 14,
+    "polePositions": 0,
+    "avgQualifyingPosition": "17.50",
+    "bestQualifyingPosition": 12
+  }
+}

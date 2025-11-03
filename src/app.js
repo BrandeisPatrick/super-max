@@ -74,10 +74,11 @@ class F1Visualizer {
         loadingManager.hide(4500);
     }
 
-    async loadRaces() {
+    async loadRaces(year = null) {
         try {
-            loadingManager.updateMessage(`Loading ${API.CURRENT_SEASON} F1 Season...`);
-            const races = await API.getRaces(API.CURRENT_SEASON);
+            const season = year || API.CURRENT_SEASON;
+            loadingManager.updateMessage(`Loading ${season} F1 Season...`);
+            const races = await API.getRaces(season);
 
             const trackSelect = document.getElementById('track-select');
             trackSelect.innerHTML = '<option value="">Select a track...</option>';
@@ -88,16 +89,9 @@ class F1Visualizer {
                 option.textContent = `${race.raceName} (${race.Circuit.circuitName})`;
                 option.dataset.circuitName = race.Circuit.circuitName;
                 option.dataset.round = race.round;
+                option.dataset.season = season;
                 trackSelect.appendChild(option);
             });
-
-            // Add GT3 option
-            const gt3Option = document.createElement('option');
-            gt3Option.value = 'gt3-nurburgring';
-            gt3Option.textContent = 'GT3 - Nürburgring (2025)';
-            gt3Option.dataset.circuitName = 'Nürburgring';
-            gt3Option.dataset.gt3 = 'true';
-            trackSelect.appendChild(gt3Option);
 
         } catch (error) {
             console.error('Error loading races:', error);
@@ -118,44 +112,30 @@ class F1Visualizer {
         document.getElementById('track-select').addEventListener('change', async (e) => {
             const selectedOption = e.target.options[e.target.selectedIndex];
             const circuitName = selectedOption.dataset.circuitName;
-            const isGT3 = selectedOption.dataset.gt3 === 'true';
 
             if (circuitName) {
-                await this.loadTrackLayout(circuitName, isGT3);
+                await this.loadTrackLayout(circuitName);
             }
         });
 
-        document.getElementById('race-type').addEventListener('change', (e) => {
-            this.filterTracksByType(e.target.value);
+        // Year selector - reload races when changed
+        document.getElementById('year-select').addEventListener('change', async (e) => {
+            const year = parseInt(e.target.value);
+            await this.loadRaces(year);
+        });
+
+        // Driver selector - update driver data display
+        document.getElementById('driver-select').addEventListener('change', () => {
+            // Will be implemented when we add multi-driver support
+            console.log('Driver selection changed');
         });
     }
 
-    filterTracksByType(type) {
-        const trackSelect = document.getElementById('track-select');
-        const options = trackSelect.getElementsByTagName('option');
-
-        for (let option of options) {
-            if (option.value === '') continue;
-
-            if (type === 'gt3') {
-                option.style.display = option.dataset.gt3 ? 'block' : 'none';
-            } else {
-                option.style.display = option.dataset.gt3 ? 'none' : 'block';
-            }
-        }
-    }
-
-    async loadTrackLayout(circuitName, isGT3 = false) {
+    async loadTrackLayout(circuitName) {
         // Show loading for track switching
         loadingManager.show(`Loading ${circuitName}...`);
 
-        let trackKey;
-
-        if (isGT3) {
-            trackKey = 'nurburgring';
-        } else {
-            trackKey = API.getTrackKey(circuitName);
-        }
+        const trackKey = API.getTrackKey(circuitName);
 
         if (!trackKey) {
             console.error('Track key not found for:', circuitName);
@@ -206,24 +186,18 @@ class F1Visualizer {
         // Show loading for data fetching
         loadingManager.show('Fetching Race Data...');
 
-        const isGT3 = selectedOption.dataset.gt3 === 'true';
-
-        if (isGT3) {
-            this.loadGT3Data();
-            loadingManager.hide(4500);
-        } else {
-            await this.loadF1Data(selectedOption.dataset.round);
-        }
+        await this.loadF1Data(selectedOption.dataset.round, selectedOption.dataset.season);
 
         document.getElementById('animate-btn').disabled = false;
     }
 
-    async loadF1Data(round) {
+    async loadF1Data(round, season = null) {
         try {
+            const year = season || API.CURRENT_SEASON;
             loadingManager.updateMessage('Loading Qualification Results...');
 
             // Get Max's qualifying data
-            const maxQuali = await API.getVerstappenQuali(API.CURRENT_SEASON, round);
+            const maxQuali = await API.getVerstappenQuali(year, round);
 
             if (!maxQuali) {
                 alert('No qualifying data found for Max Verstappen');
@@ -333,27 +307,6 @@ class F1Visualizer {
         this.comparisonData = driverQuali;
     }
 
-    loadGT3Data() {
-        const gt3Data = API.getMockGT3Data();
-
-        document.getElementById('max-quali-time').textContent = gt3Data.qualiTime;
-        document.getElementById('max-quali-pos').textContent = `Position: ${gt3Data.position}`;
-
-        const sectorsHtml = `
-            <div>S1: ${gt3Data.sectors.s1}</div>
-            <div>S2: ${gt3Data.sectors.s2}</div>
-            <div>S3: ${gt3Data.sectors.s3}</div>
-        `;
-        document.getElementById('max-sectors').innerHTML = sectorsHtml;
-
-        document.getElementById('top-speed').textContent = `${gt3Data.topSpeed} km/h`;
-        document.getElementById('avg-speed').textContent = `${gt3Data.avgSpeed} km/h`;
-        document.getElementById('sector-1').textContent = gt3Data.sectors.s1;
-        document.getElementById('sector-2').textContent = gt3Data.sectors.s2;
-        document.getElementById('sector-3').textContent = gt3Data.sectors.s3;
-
-        document.getElementById('compare-card').style.display = 'none';
-    }
 
     renderEmptyTrack() {
         this.ctx.fillStyle = '#0a0e14';

@@ -1,0 +1,235 @@
+{
+  "id": "kevin_magnussen",
+  "name": "Kevin Magnussen",
+  "code": "MAG",
+  "number": "20",
+  "nationality": "Danish",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 15,
+      "q1": "1:30.646",
+      "q2": "1:30.529",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 2,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 13,
+      "q1": "1:29.069",
+      "q2": "1:29.020",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 3,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 14,
+      "q1": "1:17.709",
+      "q2": "1:17.427",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 4,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 18,
+      "q1": "1:30.131",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 5,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 17,
+      "q1": "1:35.516",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 19,
+      "q1": "1:28.619",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 18,
+      "q1": "1:16.854",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 15,
+      "q1": "1:11.832",
+      "q2": "1:11.725",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 9,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 14,
+      "q1": "1:13.217",
+      "q2": "1:12.916",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 10,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 16,
+      "q1": "1:12.937",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 12,
+      "q1": "1:05.508",
+      "q2": "1:05.347",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 17,
+      "q1": "1:32.905",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 13,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 15,
+      "q1": "1:17.851",
+      "q2": "1:16.548",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 14,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 17,
+      "q1": "1:56.500",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 14,
+      "q1": "1:11.630",
+      "q2": "1:11.295",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 13,
+      "q1": "1:20.856",
+      "q2": "1:20.698",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 14,
+      "q1": "1:30.829",
+      "q2": "1:30.653",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 9,
+      "q1": "1:33.564",
+      "q2": "1:33.474",
+      "q3": "1:33.481",
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 7,
+      "q1": "1:17.125",
+      "q2": "1:17.003",
+      "q3": "1:16.886",
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 22,
+      "raceName": "Las Vegas Grand Prix",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "position": 12,
+      "q1": "1:33.991",
+      "q2": "1:33.297",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 23,
+      "raceName": "Qatar Grand Prix",
+      "circuit": "Losail International Circuit",
+      "position": 10,
+      "q1": "1:21.891",
+      "q2": "1:21.387",
+      "q3": "1:21.500",
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 24,
+      "raceName": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "position": 15,
+      "q1": "1:23.632",
+      "q2": "1:23.877",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 22,
+    "polePositions": 0,
+    "avgQualifyingPosition": "14.27",
+    "bestQualifyingPosition": 7
+  }
+}

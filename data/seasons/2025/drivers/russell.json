@@ -1,0 +1,215 @@
+{
+  "id": "russell",
+  "name": "George Russell",
+  "code": "RUS",
+  "number": "63",
+  "nationality": "British",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 4,
+      "q1": "1:15.971",
+      "q2": "1:15.798",
+      "q3": "1:15.546",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 2,
+      "q1": "1:31.295",
+      "q2": "1:31.307",
+      "q3": "1:30.723",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 5,
+      "q1": "1:27.843",
+      "q2": "1:27.400",
+      "q3": "1:27.318",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 2,
+      "q1": "1:31.494",
+      "q2": "1:30.664",
+      "q3": "1:30.009",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 3,
+      "q1": "1:28.282",
+      "q2": "1:27.599",
+      "q3": "1:27.407",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 5,
+      "q1": "1:27.014",
+      "q2": "1:26.575",
+      "q3": "1:26.385",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 3,
+      "q1": "1:15.852",
+      "q2": "1:15.334",
+      "q3": "1:14.807",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 14,
+      "q1": "1:11.507",
+      "q2": null,
+      "q3": null,
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 9,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 4,
+      "q1": "1:12.806",
+      "q2": "1:12.407",
+      "q3": "1:11.848",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 1,
+      "q1": "1:12.075",
+      "q2": "1:11.570",
+      "q3": "1:10.899",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 5,
+      "q1": "1:05.189",
+      "q2": "1:04.860",
+      "q3": "1:04.763",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 4,
+      "q1": "1:26.236",
+      "q2": "1:25.637",
+      "q3": "1:25.029",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 6,
+      "q1": "1:41.784",
+      "q2": "1:41.254",
+      "q3": "1:41.260",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 4,
+      "q1": "1:15.627",
+      "q2": "1:15.201",
+      "q3": "1:15.425",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 5,
+      "q1": "1:09.676",
+      "q2": "1:09.313",
+      "q3": "1:09.255",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 6,
+      "q1": "1:19.414",
+      "q2": "1:19.287",
+      "q3": "1:19.157",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 5,
+      "q1": "1:41.646",
+      "q2": "1:41.455",
+      "q3": "1:42.070",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 1,
+      "q1": "1:29.928",
+      "q2": "1:29.562",
+      "q3": "1:29.158",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 4,
+      "q1": "1:33.311",
+      "q2": "1:33.058",
+      "q3": "1:32.826",
+      "constructor": "Mercedes"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 4,
+      "q1": "1:16.895",
+      "q2": "1:16.537",
+      "q3": "1:16.034",
+      "constructor": "Mercedes"
+    }
+  ],
+  "stats": {
+    "totalRaces": 20,
+    "polePositions": 2,
+    "avgQualifyingPosition": "4.35",
+    "bestQualifyingPosition": 1
+  }
+}

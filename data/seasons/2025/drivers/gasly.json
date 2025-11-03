@@ -1,0 +1,215 @@
+{
+  "id": "gasly",
+  "name": "Pierre Gasly",
+  "code": "GAS",
+  "number": "10",
+  "nationality": "French",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 9,
+      "q1": "1:16.328",
+      "q2": "1:16.112",
+      "q3": "1:15.980",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 16,
+      "q1": "1:31.992",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 11,
+      "q1": "1:28.186",
+      "q2": "1:27.822",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 5,
+      "q1": "1:31.462",
+      "q2": "1:30.643",
+      "q3": "1:30.216",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 9,
+      "q1": "1:28.421",
+      "q2": "1:28.025",
+      "q3": "1:28.367",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 18,
+      "q1": "1:27.710",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 10,
+      "q1": "1:15.937",
+      "q2": "1:15.505",
+      "q3": "1:15.787",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 18,
+      "q1": "1:11.994",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 9,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 8,
+      "q1": "1:13.081",
+      "q2": "1:12.611",
+      "q3": "1:12.199",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 20,
+      "q1": "1:12.667",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 10,
+      "q1": "1:05.054",
+      "q2": "1:04.846",
+      "q3": "1:05.649",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 10,
+      "q1": "1:26.328",
+      "q2": "1:25.711",
+      "q3": "1:25.785",
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 13,
+      "q1": "1:41.800",
+      "q2": "1:41.633",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 17,
+      "q1": "1:15.966",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 14,
+      "q1": "1:09.894",
+      "q2": "1:09.637",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 19,
+      "q1": "1:20.103",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 18,
+      "q1": "1:43.139",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 18,
+      "q1": "1:31.261",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 14,
+      "q1": "1:33.599",
+      "q2": "1:33.651",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 18,
+      "q1": "1:17.546",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 20,
+    "polePositions": 0,
+    "avgQualifyingPosition": "13.75",
+    "bestQualifyingPosition": 5
+  }
+}

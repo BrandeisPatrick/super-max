@@ -1,0 +1,215 @@
+{
+  "id": "leclerc",
+  "name": "Charles Leclerc",
+  "code": "LEC",
+  "number": "16",
+  "nationality": "Monegasque",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 7,
+      "q1": "1:16.029",
+      "q2": "1:15.827",
+      "q3": "1:15.755",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 6,
+      "q1": "1:31.579",
+      "q2": "1:31.450",
+      "q3": "1:31.021",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 4,
+      "q1": "1:27.920",
+      "q2": "1:27.555",
+      "q3": "1:27.299",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 3,
+      "q1": "1:31.454",
+      "q2": "1:30.724",
+      "q3": "1:30.175",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 4,
+      "q1": "1:28.552",
+      "q2": "1:27.866",
+      "q3": "1:27.670",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 8,
+      "q1": "1:27.417",
+      "q2": "1:26.948",
+      "q3": "1:26.754",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 11,
+      "q1": "1:16.108",
+      "q2": "1:15.604",
+      "q3": null,
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 2,
+      "q1": "1:11.229",
+      "q2": "1:10.581",
+      "q3": "1:10.063",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 9,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 7,
+      "q1": "1:13.014",
+      "q2": "1:12.495",
+      "q3": "1:12.131",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 8,
+      "q1": "1:12.038",
+      "q2": "1:11.626",
+      "q3": "1:11.682",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 2,
+      "q1": "1:05.197",
+      "q2": "1:04.734",
+      "q3": "1:04.492",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 6,
+      "q1": "1:26.186",
+      "q2": "1:25.133",
+      "q3": "1:25.121",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 3,
+      "q1": "1:41.635",
+      "q2": "1:41.084",
+      "q3": "1:40.900",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 1,
+      "q1": "1:15.582",
+      "q2": "1:15.455",
+      "q3": "1:15.372",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 6,
+      "q1": "1:09.906",
+      "q2": "1:09.304",
+      "q3": "1:09.340",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 4,
+      "q1": "1:19.689",
+      "q2": "1:19.310",
+      "q3": "1:19.007",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 10,
+      "q1": "1:41.458",
+      "q2": "1:41.519",
+      "q3": null,
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 7,
+      "q1": "1:30.370",
+      "q2": "1:29.914",
+      "q3": "1:29.784",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 3,
+      "q1": "1:33.525",
+      "q2": "1:32.869",
+      "q3": "1:32.807",
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 2,
+      "q1": "1:17.024",
+      "q2": "1:16.658",
+      "q3": "1:15.848",
+      "constructor": "Ferrari"
+    }
+  ],
+  "stats": {
+    "totalRaces": 20,
+    "polePositions": 1,
+    "avgQualifyingPosition": "5.20",
+    "bestQualifyingPosition": 1
+  }
+}

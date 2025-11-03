@@ -1,0 +1,45 @@
+{
+  "id": "bearman",
+  "name": "Oliver Bearman",
+  "code": "BEA",
+  "number": "38",
+  "nationality": "British",
+  "races": [
+    {
+      "round": 2,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 11,
+      "q1": "1:28.984",
+      "q2": "1:28.642",
+      "q3": null,
+      "constructor": "Ferrari"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 11,
+      "q1": "1:43.471",
+      "q2": "1:42.968",
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    },
+    {
+      "round": 21,
+      "raceName": "São Paulo Grand Prix",
+      "circuit": "Autódromo José Carlos Pace",
+      "position": 17,
+      "q1": "1:31.229",
+      "q2": null,
+      "q3": null,
+      "constructor": "Haas F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 3,
+    "polePositions": 0,
+    "avgQualifyingPosition": "13.00",
+    "bestQualifyingPosition": 11
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "doohan",
+  "name": "Jack Doohan",
+  "code": "DOO",
+  "number": "61",
+  "nationality": "Australian",
+  "races": [
+    {
+      "round": 24,
+      "raceName": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "position": 20,
+      "q1": "1:24.105",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 1,
+    "polePositions": 0,
+    "avgQualifyingPosition": "20.00",
+    "bestQualifyingPosition": 20
+  }
+}

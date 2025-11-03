@@ -1,0 +1,75 @@
+{
+  "id": "doohan",
+  "name": "Jack Doohan",
+  "code": "DOO",
+  "number": "7",
+  "nationality": "Australian",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 14,
+      "q1": "1:16.315",
+      "q2": "1:16.863",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 18,
+      "q1": "1:32.092",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 19,
+      "q1": "1:28.877",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 11,
+      "q1": "1:31.414",
+      "q2": "1:31.245",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 17,
+      "q1": "1:28.739",
+      "q2": null,
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 14,
+      "q1": "1:27.422",
+      "q2": "1:27.186",
+      "q3": null,
+      "constructor": "Alpine F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 6,
+    "polePositions": 0,
+    "avgQualifyingPosition": "15.50",
+    "bestQualifyingPosition": 11
+  }
+}

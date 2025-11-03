@@ -50,7 +50,7 @@
     },
     {
       "key": "mexico",
-      "name": "Autódromo Hermanos Rodríguez",
+      "name": "Aut\u00f3dromo Hermanos Rodr\u00edguez",
       "country": "Mexico City",
       "file": "tracks/mexico.json"
     },
@@ -86,11 +86,65 @@
     },
     {
       "key": "brazil",
-      "name": "Autódromo José Carlos Pace - Interlagos",
+      "name": "Aut\u00f3dromo Jos\u00e9 Carlos Pace - Interlagos",
       "country": "Sao Paulo",
       "file": "tracks/brazil.json"
+    },
+    {
+      "key": "zandvoort",
+      "name": "Circuit Zandvoort",
+      "country": "Zandvoort",
+      "file": "tracks/zandvoort.json"
+    },
+    {
+      "key": "austria",
+      "name": "Red Bull Ring",
+      "country": "Spielberg",
+      "file": "tracks/austria.json"
+    },
+    {
+      "key": "lasvegas",
+      "name": "Las Vegas Street Circuit",
+      "country": "Las Vegas",
+      "file": "tracks/lasvegas.json"
+    },
+    {
+      "key": "miami",
+      "name": "Miami International Autodrome",
+      "country": "Miami",
+      "file": "tracks/miami.json"
+    },
+    {
+      "key": "singapore",
+      "name": "Marina Bay Street Circuit",
+      "country": "Singapore",
+      "file": "tracks/singapore.json"
+    },
+    {
+      "key": "china",
+      "name": "Shanghai International Circuit",
+      "country": "Shanghai",
+      "file": "tracks/china.json"
+    },
+    {
+      "key": "imola",
+      "name": "Autodromo Enzo e Dino Ferrari",
+      "country": "Imola",
+      "file": "tracks/imola.json"
+    },
+    {
+      "key": "qatar",
+      "name": "Losail International Circuit",
+      "country": "Lusail",
+      "file": "tracks/qatar.json"
+    },
+    {
+      "key": "azerbaijan",
+      "name": "Baku City Circuit",
+      "country": "Baku",
+      "file": "tracks/azerbaijan.json"
     }
   ],
-  "generated": "2025-11-02T19:31:25.402Z",
-  "totalTracks": 15
+  "generated": "2025-11-02T23:35:47.192835Z",
+  "totalTracks": 24
 }

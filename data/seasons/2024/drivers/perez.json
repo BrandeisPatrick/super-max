@@ -1,0 +1,255 @@
+{
+  "id": "perez",
+  "name": "Sergio Pérez",
+  "code": "PER",
+  "number": "11",
+  "nationality": "Mexican",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 5,
+      "q1": "1:30.221",
+      "q2": "1:29.932",
+      "q3": "1:29.537",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 2,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 3,
+      "q1": "1:28.638",
+      "q2": "1:28.467",
+      "q3": "1:27.807",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 3,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 3,
+      "q1": "1:16.805",
+      "q2": "1:16.631",
+      "q3": "1:16.274",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 4,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 2,
+      "q1": "1:29.303",
+      "q2": "1:28.752",
+      "q3": "1:28.263",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 5,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 2,
+      "q1": "1:35.457",
+      "q2": "1:34.026",
+      "q3": "1:33.982",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 4,
+      "q1": "1:27.772",
+      "q2": "1:27.839",
+      "q3": "1:27.460",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 11,
+      "q1": "1:16.404",
+      "q2": "1:15.706",
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 16,
+      "q1": "1:12.060",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 9,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 16,
+      "q1": "1:13.326",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 10,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 8,
+      "q1": "1:12.477",
+      "q2": "1:12.054",
+      "q3": "1:12.061",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 8,
+      "q1": "1:05.587",
+      "q2": "1:05.144",
+      "q3": "1:05.202",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 19,
+      "q1": "1:38.348",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 13,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 16,
+      "q1": "1:17.886",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 14,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 3,
+      "q1": "1:55.139",
+      "q2": "1:54.470",
+      "q3": "1:53.765",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 5,
+      "q1": "1:11.006",
+      "q2": "1:10.678",
+      "q3": "1:10.416",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 8,
+      "q1": "1:20.598",
+      "q2": "1:20.216",
+      "q3": "1:20.062",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 4,
+      "q1": "1:43.213",
+      "q2": "1:42.263",
+      "q3": "1:41.813",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 13,
+      "q1": "1:30.624",
+      "q2": "1:30.579",
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 10,
+      "q1": "1:33.611",
+      "q2": "1:33.020",
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 18,
+      "q1": "1:17.611",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 21,
+      "raceName": "São Paulo Grand Prix",
+      "circuit": "Autódromo José Carlos Pace",
+      "position": 13,
+      "q1": "1:30.035",
+      "q2": "1:28.158",
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 22,
+      "raceName": "Las Vegas Grand Prix",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "position": 16,
+      "q1": "1:34.155",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 23,
+      "raceName": "Qatar Grand Prix",
+      "circuit": "Losail International Circuit",
+      "position": 9,
+      "q1": "1:21.675",
+      "q2": "1:21.425",
+      "q3": "1:21.425",
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 24,
+      "raceName": "Abu Dhabi Grand Prix",
+      "circuit": "Yas Marina Circuit",
+      "position": 10,
+      "q1": "1:23.559",
+      "q2": "1:23.379",
+      "q3": "1:23.264",
+      "constructor": "Red Bull"
+    }
+  ],
+  "stats": {
+    "totalRaces": 24,
+    "polePositions": 0,
+    "avgQualifyingPosition": "9.25",
+    "bestQualifyingPosition": 2
+  }
+}

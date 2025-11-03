@@ -1,0 +1,215 @@
+{
+  "id": "lawson",
+  "name": "Liam Lawson",
+  "code": "LAW",
+  "number": "30",
+  "nationality": "New Zealander",
+  "races": [
+    {
+      "round": 1,
+      "raceName": "Australian Grand Prix",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "position": 18,
+      "q1": "1:17.094",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 2,
+      "raceName": "Chinese Grand Prix",
+      "circuit": "Shanghai International Circuit",
+      "position": 20,
+      "q1": "1:32.174",
+      "q2": null,
+      "q3": null,
+      "constructor": "Red Bull"
+    },
+    {
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "circuit": "Suzuka Circuit",
+      "position": 14,
+      "q1": "1:28.554",
+      "q2": "1:27.906",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit",
+      "position": 17,
+      "q1": "1:32.165",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 5,
+      "raceName": "Saudi Arabian Grand Prix",
+      "circuit": "Jeddah Corniche Circuit",
+      "position": 12,
+      "q1": "1:28.561",
+      "q2": "1:28.191",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "circuit": "Miami International Autodrome",
+      "position": 15,
+      "q1": "1:27.444",
+      "q2": "1:27.363",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 7,
+      "raceName": "Emilia Romagna Grand Prix",
+      "circuit": "Autodromo Enzo e Dino Ferrari",
+      "position": 16,
+      "q1": "1:16.379",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 8,
+      "raceName": "Monaco Grand Prix",
+      "circuit": "Circuit de Monaco",
+      "position": 9,
+      "q1": "1:11.818",
+      "q2": "1:11.250",
+      "q3": "1:11.129",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 9,
+      "raceName": "Spanish Grand Prix",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "position": 13,
+      "q1": "1:13.039",
+      "q2": "1:12.763",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "circuit": "Circuit Gilles Villeneuve",
+      "position": 19,
+      "q1": "1:12.525",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 11,
+      "raceName": "Austrian Grand Prix",
+      "circuit": "Red Bull Ring",
+      "position": 6,
+      "q1": "1:05.017",
+      "q2": "1:05.041",
+      "q3": "1:04.926",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "position": 16,
+      "q1": "1:26.440",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "position": 9,
+      "q1": "1:41.748",
+      "q2": "1:41.297",
+      "q3": "1:41.328",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "circuit": "Hungaroring",
+      "position": 9,
+      "q1": "1:15.849",
+      "q2": "1:15.630",
+      "q3": "1:15.821",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 15,
+      "raceName": "Dutch Grand Prix",
+      "circuit": "Circuit Park Zandvoort",
+      "position": 8,
+      "q1": "1:09.779",
+      "q2": "1:09.383",
+      "q3": "1:09.500",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "circuit": "Autodromo Nazionale di Monza",
+      "position": 20,
+      "q1": "1:20.279",
+      "q2": null,
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 17,
+      "raceName": "Azerbaijan Grand Prix",
+      "circuit": "Baku City Circuit",
+      "position": 3,
+      "q1": "1:42.257",
+      "q2": "1:41.537",
+      "q3": "1:41.707",
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 18,
+      "raceName": "Singapore Grand Prix",
+      "circuit": "Marina Bay Street Circuit",
+      "position": 12,
+      "q1": "1:30.681",
+      "q2": "1:30.320",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "circuit": "Circuit of the Americas",
+      "position": 12,
+      "q1": "1:33.549",
+      "q2": "1:33.360",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    },
+    {
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "position": 15,
+      "q1": "1:16.961",
+      "q2": "1:18.072",
+      "q3": null,
+      "constructor": "RB F1 Team"
+    }
+  ],
+  "stats": {
+    "totalRaces": 20,
+    "polePositions": 0,
+    "avgQualifyingPosition": "13.15",
+    "bestQualifyingPosition": 3
+  }
+}
