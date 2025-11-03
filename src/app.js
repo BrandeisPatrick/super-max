@@ -627,72 +627,89 @@ class F1Visualizer {
     renderTrack() {
         if (!this.selectedTrack) return;
 
-        // Clear canvas
-        this.ctx.fillStyle = '#0a0e14';
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
         const coords = this.selectedTrack.coordinates;
 
-        // Calculate bounds and scale
-        const padding = 50;
-        const bounds = this.getTrackBounds(coords);
-        const scale = Math.min(
-            (this.canvas.width - padding * 2) / bounds.width,
-            (this.canvas.height - padding * 2) / bounds.height
-        );
+        // === PROFESSIONAL F1 VISUALIZATION (ULTRA-OPTIMIZED) ===
 
-        const offsetX = padding - bounds.minX * scale + (this.canvas.width - bounds.width * scale - padding * 2) / 2;
-        const offsetY = padding - bounds.minY * scale + (this.canvas.height - bounds.height * scale - padding * 2) / 2;
-
-        // Store scale and offset for telemetry animation
-        this.trackScale = scale;
-        this.trackOffsetX = offsetX;
-        this.trackOffsetY = offsetY;
-
-        // === PROFESSIONAL F1 VISUALIZATION (CACHED) ===
-
-        // PERFORMANCE OPTIMIZATION: Only calculate once per track, then cache
+        // PERFORMANCE: Cache everything - analysis, rendering, calculations
         if (!this.trackCache || this.trackCache.trackName !== this.selectedTrack.name) {
-            console.log('🔄 Computing track analysis (one-time)...');
+            console.log('🔄 Pre-rendering track (one-time)...');
+
+            // Step 1: Calculate bounds and scale ONCE
+            const padding = 50;
+            const bounds = this.getTrackBounds(coords);
+            const scale = Math.min(
+                (this.canvas.width - padding * 2) / bounds.width,
+                (this.canvas.height - padding * 2) / bounds.height
+            );
+            const offsetX = padding - bounds.minX * scale + (this.canvas.width - bounds.width * scale - padding * 2) / 2;
+            const offsetY = padding - bounds.minY * scale + (this.canvas.height - bounds.height * scale - padding * 2) / 2;
+
+            // Step 2: Analyze track
+            const segments = this.analyzeTrackCurvature(coords);
+            const corners = this.detectCorners(coords);
+
+            // Step 3: Pre-compute scaled coordinates for animation
+            const scaledCoords = coords.map(point => ({
+                x: point.x * scale + offsetX,
+                y: point.y * scale + offsetY
+            }));
+
+            // Step 4: Create offscreen canvas to pre-render the track
+            const offscreenCanvas = document.createElement('canvas');
+            offscreenCanvas.width = this.canvas.width;
+            offscreenCanvas.height = this.canvas.height;
+            const offscreenCtx = offscreenCanvas.getContext('2d');
+
+            // Clear offscreen canvas with background
+            offscreenCtx.fillStyle = '#0a0e14';
+            offscreenCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+            // Temporarily switch context to offscreen
+            const originalCtx = this.ctx;
+            this.ctx = offscreenCtx;
+
+            // Render track to offscreen canvas
+            this.drawSegmentedTrack(coords, segments, scale, offsetX, offsetY);
+            this.drawCornerNumbers(corners, scale, offsetX, offsetY);
+            this.drawSpeedZoneLabels(segments, coords, scale, offsetX, offsetY);
+
+            // Draw start/finish line
+            const startX = coords[0].x * scale + offsetX;
+            const startY = coords[0].y * scale + offsetY;
+            this.ctx.strokeStyle = '#fff';
+            this.ctx.lineWidth = 4;
+            this.ctx.setLineDash([10, 10]);
+            this.ctx.beginPath();
+            this.ctx.moveTo(startX - 15, startY);
+            this.ctx.lineTo(startX + 15, startY);
+            this.ctx.stroke();
+            this.ctx.setLineDash([]);
+
+            // Restore original context
+            this.ctx = originalCtx;
+
+            // Cache EVERYTHING
             this.trackCache = {
                 trackName: this.selectedTrack.name,
-                segments: this.analyzeTrackCurvature(coords),
-                corners: this.detectCorners(coords)
+                scale: scale,
+                offsetX: offsetX,
+                offsetY: offsetY,
+                scaledCoords: scaledCoords,
+                renderedImage: offscreenCanvas
             };
-            console.log(`✅ Cached ${this.trackCache.segments.length} segments, ${this.trackCache.corners.length} corners`);
+            console.log(`✅ Track fully pre-rendered and cached`);
         }
 
-        // Use cached data for rendering
-        const segments = this.trackCache.segments;
-        const corners = this.trackCache.corners;
+        // Store cached values for animation (from cache, not recalculated)
+        this.trackScale = this.trackCache.scale;
+        this.trackOffsetX = this.trackCache.offsetX;
+        this.trackOffsetY = this.trackCache.offsetY;
+        this.scaledCoords = this.trackCache.scaledCoords;
 
-        // Draw track with color-coded speed zones
-        this.drawSegmentedTrack(coords, segments, scale, offsetX, offsetY);
-
-        // Draw corner numbers
-        this.drawCornerNumbers(corners, scale, offsetX, offsetY);
-
-        // Draw speed zone labels
-        this.drawSpeedZoneLabels(segments, coords, scale, offsetX, offsetY);
-
-        // Draw start/finish line
-        const startX = coords[0].x * scale + offsetX;
-        const startY = coords[0].y * scale + offsetY;
-
-        this.ctx.strokeStyle = '#fff';
-        this.ctx.lineWidth = 4;
-        this.ctx.setLineDash([10, 10]);
-        this.ctx.beginPath();
-        this.ctx.moveTo(startX - 15, startY);
-        this.ctx.lineTo(startX + 15, startY);
-        this.ctx.stroke();
-        this.ctx.setLineDash([]);
-
-        // Store scaled coordinates for animation
-        this.scaledCoords = coords.map(point => ({
-            x: point.x * scale + offsetX,
-            y: point.y * scale + offsetY
-        }));
+        // ULTRA-FAST RENDERING: Just copy the pre-rendered image!
+        // This is a single GPU operation instead of 40-60+ draw calls
+        this.ctx.drawImage(this.trackCache.renderedImage, 0, 0);
     }
 
     getTrackBounds(coords) {
