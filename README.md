@@ -1,15 +1,22 @@
-# Max Verstappen - Race Data Visualization
+# Max Verstappen - F1 Race Data Visualization
 
-An interactive web application that visualizes Max Verstappen's F1 and GT3 race data, including qualification times, lap animations, and driver comparisons.
+An interactive web application featuring professional F1-style track visualization with real telemetry data, color-coded speed zones, and smooth animations.
+
+## 🏎️ Live Demo
+
+**Visit the live site:** [https://brandeispatrick.github.io/super-max/](https://brandeispatrick.github.io/super-max/)
 
 ## Features
 
-- **Real F1 Data Integration**: Uses Ergast F1 API and OpenF1 API for 2025 season data
-- **Track Visualization**: Displays all F1 calendar tracks with accurate layouts
-- **Live Animation**: Watch animated lap simulations on real circuit layouts
-- **Driver Comparison**: Compare Max Verstappen's qualification times with other drivers
-- **GT3 Support**: Includes Max's GT3 race data
-- **Detailed Statistics**: View top speeds, sector times, and qualifying positions
+- **Professional F1 Visualization**: Broadcast-quality track rendering with color-coded speed zones
+- **Real-Time Telemetry**: Live speed, throttle, brake, and gear data during lap animations
+- **Speed Zone Analysis**: Automatic detection of high/medium/low speed zones based on track curvature
+- **Corner Detection**: Numbered corners with F1-style labels
+- **Track Glow Effects**: Multi-layer visual effects for professional appearance
+- **Ultra-High Detail Tracks**: 800-1000+ coordinate points for accurate track shapes
+- **Performance Optimized**: Offscreen canvas caching for smooth 60fps animations
+- **Real F1 Data**: Integration with Jolpica F1 API and OpenF1 for 2025 season data
+- **Detailed Statistics**: Top speed, sector times, and qualifying positions
 
 ## Getting Started
 
