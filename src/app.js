@@ -816,8 +816,8 @@ class F1Visualizer {
                     this.drawCar(compX, compY, '#ff6b00');
                 }
 
-                // Speed up animation - increment by 3 for 3x faster
-                this.currentTelemetryIndex += 3;
+                // Animation speed - increment by 1.5
+                this.currentTelemetryIndex += 1.5;
             } else {
                 // Fallback to original animation if telemetry not available
                 const progress = this.carPosition / 100;
@@ -843,8 +843,8 @@ class F1Visualizer {
                     this.drawCar(compPoint.x, compPoint.y, '#ff6b00');
                 }
 
-                // Speed up fallback animation
-                this.carPosition += 1.5;
+                // Fallback animation speed
+                this.carPosition += 0.75;
                 if (this.carPosition >= 100) {
                     this.carPosition = 0;
                 }
